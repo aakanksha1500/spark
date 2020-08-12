@@ -1,35 +1,31 @@
 <?php
 
-$Name=$_POST['Name'];
-$Email=$_POST['Email'];
-$Amount=$_POST['Amount'];
-$Phone=$_POST['phone'];
-$purpose='Donation';
+$ch = curl_init();
 
-
-include 'instamojo/Instamojo.php';
-$api = new Instamojo\Instamojo('test_84b6568c3ccbde4727358de110e', 'test_965aef1fa08bfb577dfdfca4b74', 'https://test.instamojo.com/api/1.1/');
-
-try {
-    $response = $api->paymentRequestCreate(array(
-        "purpose" => $purpose,
-        "amount" => $Amount,
-        "send_email" => true,
-        "email" => $Email,
-        "buyer_name" =>$Name,
-        "phone"=>$Phone,
-        "send_sms" => true,
-        "allow_repeated_payments" =>false,
-        "redirect_url" => "https://payment-gateway-integration.000webhostapp.com/redirect.php"
-        ));
-    //print_r($response);
-    $pay_url=$response['longurl'];
-    header("location: $pay_url");
-	}
-	catch (Exception $e) {
-	    print('Error: ' . $e->getMessage());
-	}
-
-
+curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/');
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+curl_setopt($ch, CURLOPT_HTTPHEADER,
+            array("X-Api-Key:test_84b6568c3ccbde4727358de110e",
+                  "X-Auth-Token:test_965aef1fa08bfb577dfdfca4b74"));
+$payload = Array(
+    'purpose' => 'FIFA 16',
+    'amount' => '2500',
+    'phone' => '9999999999',
+    'buyer_name' => 'AKBWEB',
+    'redirect_url' => 'https://child-trust.herokuapp.com/redirect.php',
+    'send_email' => true,
+    'webhook' => '',
+    'send_sms' => true,
+    'email' => 'foo@example.com',
+    'allow_repeated_payments' => false
+);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+$response = curl_exec($ch);
+curl_close($ch); 
+$json_decode = json_decode($response ,true);
+echo $response;
 
 ?>
