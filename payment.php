@@ -17,14 +17,14 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,
                   "X-Auth-Token:test_965aef1fa08bfb577dfdfca4b74"));
 $payload = Array(
     'purpose' => 'Donation',
-    'amount' => '$Amount',
-    'phone' => '9999999999',
-    'buyer_name' => '$Name',
+    'amount' => $Amount,
+    'phone' => $Phone,
+    'buyer_name' => $Name,
     'redirect_url' => 'https://child-trust.herokuapp.com/redirect.php',
     'send_email' => true,
     'webhook' => '',
     'send_sms' => true,
-    'email' => '$Email',
+    'email' => $Email,
     'allow_repeated_payments' => false
 );
 curl_setopt($ch, CURLOPT_POST, true);
@@ -34,6 +34,6 @@ curl_close($ch);
 
 $json_decode = json_decode($response ,true);
 $long_url = $json_decode['payment_request'] ['longurl'];
-header("location:.$long_url");
+header("location:$long_url");
 
 ?>
