@@ -18,14 +18,16 @@ $payload = Array(
     'send_email' => true,
     'webhook' => '',
     'send_sms' => true,
-    'email' => 'foo@example.com',
+    'email' => 'aakankshadeshpande527@gmail.com',
     'allow_repeated_payments' => false
 );
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
 $response = curl_exec($ch);
 curl_close($ch); 
+
 $json_decode = json_decode($response ,true);
-echo $response;
+$lon_url = $json_decode['payment_request'] ['longurl'];
+header('Location:'.$long_url);
 
 ?>
