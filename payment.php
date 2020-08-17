@@ -1,8 +1,10 @@
 <?php
-$Name=$_POST['name'];
-$Email=$_POST['email'];
-$Amount=$_POST['amount'];
-$Phone=$_POST['telnum'];
+
+$Name=$_POST['Name'];
+$Email=$_POST['Email'];
+$Amount=$_POST['Amount'];
+$Phone=$_POST['phone'];
+$purpose='Donation';
 
 $ch = curl_init();
 
