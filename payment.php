@@ -28,6 +28,6 @@ curl_close($ch);
 
 $json_decode = json_decode($response ,true);
 $lon_url = $json_decode['payment_request'] ['longurl'];
-header('location:'.$long_url);
+header("location:.$long_url");
 
 ?>
