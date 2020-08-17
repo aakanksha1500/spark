@@ -16,15 +16,15 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,
             array("X-Api-Key:test_84b6568c3ccbde4727358de110e",
                   "X-Auth-Token:test_965aef1fa08bfb577dfdfca4b74"));
 $payload = Array(
-    'purpose' => 'FIFA 16',
-    'amount' => '2500',
+    'purpose' => 'Donation',
+    'amount' => '$Amount',
     'phone' => '9999999999',
-    'buyer_name' => 'AKBWEB',
+    'buyer_name' => '$Name',
     'redirect_url' => 'https://child-trust.herokuapp.com/redirect.php',
     'send_email' => true,
     'webhook' => '',
     'send_sms' => true,
-    'email' => 'aakankshadeshpande527@gmail.com',
+    'email' => '$Email',
     'allow_repeated_payments' => false
 );
 curl_setopt($ch, CURLOPT_POST, true);
