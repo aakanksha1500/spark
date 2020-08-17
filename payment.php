@@ -1,4 +1,8 @@
 <?php
+$Name=$_POST['name'];
+$Email=$_POST['email'];
+$Amount=$_POST['amount'];
+$Phone=$_POST['telnum'];
 
 $ch = curl_init();
 
@@ -27,7 +31,7 @@ $response = curl_exec($ch);
 curl_close($ch); 
 
 $json_decode = json_decode($response ,true);
-$lon_url = $json_decode['payment_request'] ['longurl'];
+$long_url = $json_decode['payment_request'] ['longurl'];
 header("location:.$long_url");
 
 ?>
