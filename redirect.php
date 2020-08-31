@@ -12,27 +12,40 @@
     <title>Thank You For Donation</title>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
   <body>
     <div class="container">
 
       <div class="page-header">
+        <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">We make a LIVING by what we GET , We make a LIFE by what we GIVE<br></p>
+                        <footer class="blockquote-footer">Winston S. Churchill
+                            
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
         
-        <p class="lead" style=color:blue>Thank you for your donation to sahil's Charity.</p>
       </div>
-
+      <p  style="color:blue">Thank you for your donation to The Child-Trust.</p>
       <strong><h3 style="color:#6da552">Thank You..!! Payment Done Sucessfully!!</h3> </strong>
    
-    <p> Thank you for supporting Charity work with your generous regular donations. Your valuable gift is helping us provide long-term support to girls and poor people.
+    <p> Thank you for supporting Charity work with your generous regular donations. Your valuable gift is helping us provide long-term support to children.
 </p>
+<img src="img/19.jpg" alt="thanking photo">
 <p>Note : Check Your Email For Transection Detail</p>
  <?php
 
@@ -48,7 +61,7 @@ try {
 
 
     echo "<h4>Payment ID: " . $response['payments'][0]['payment_id'] . "</h4>" ;
-    echo "<h4>Payment Email: " . $response['payments'][0]['amount'] . "</h4>";
+    echo "<h4>Payment Amount: " . $response['payments'][0]['amount'] . "</h4>";
     echo "<h4>Payment Name: " . $response['payments'][0]['buyer_name'] . "</h4>" ;
     echo "<h4>Payment Email: " . $response['payments'][0]['buyer_email'] . "</h4>" ;
     
@@ -73,7 +86,9 @@ catch (Exception $e) {
       
     </div> <!-- /container -->
 
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
   </body>

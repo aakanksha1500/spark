@@ -1,5 +1,13 @@
+
+/*body {
+
+  background: url('../img/12.jpg');
+  background-size: cover;
+  background-position: center;
+  
+}*/
 .row-header {
-  margin: 0px auto;
+   margin: 0px auto;
   padding: 0px 0px;
 }
 .row-content {
@@ -9,15 +17,19 @@
   min-height: 400px;
 }
 .footer {
-  background-color: #D1C4E9;
+  background-color: #00a2b1;
   margin: 0px auto;
   padding: 20px 0px;
+  color: #fff;
 }
 .jumbotron {
   margin: 0px auto;
-  padding: 70px 30px;
-  background: #9575CD;
-  color: floralwhite;
+  padding: 120px 10px; 
+}
+.column {
+  background: #A7D7FF;
+  opacity:0.7;
+
 }
 address {
   font-size: 80%;
@@ -29,7 +41,7 @@ body {
   z-index: 0;
 }
 .navbar-dark {
-  background-color: #512DA8;
+  background-color: #00a2b1;
 }
 .tab-content {
   border-left: 1px solid #ddd;
@@ -37,17 +49,16 @@ body {
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
-.carousel {
-  background: #512DA8;
-}
+
 .carousel .carousel-item {
-  height: 300px;
+  height: 700px;
 }
 .carousel .carousel-item img {
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 300px;
+  min-height: 700px;
+  width: 100%;
 }
 #carouselButton {
   right: 0px;
@@ -56,14 +67,9 @@ body {
   z-index: 1;
 }
 
-.modal-body {
-	background-color: #9575CD; 
-}
-
-.modal-header {
-	background-color: #512DA8;
-}
-
 .nav-items .navbar-nav .active .nav-links {
   color: #ff0000;
 }
+
+
+ 
